@@ -78,31 +78,29 @@ span  {
 .contact:hover{
   background-color: orangered;
   box-shadow: 0 0 25px orangered;/*box-shadow: 0 0 25px orangered;
-
 Creates a glowing effect around the button.
-
 0 0 → no horizontal or vertical offset (the shadow is centered around).
-
 25px → blur radius (how far the glow spreads).
-
 orangered → shadow/glow color.
 🖼 Example: Like a bulb glowing with a bright orange halo around it.
-
-👉 This makes the button stand out more when hovered*/
+This makes the button stand out more when hovered*/
   color: white;
 }
 
 .home{
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh;/*Means minimum height of the element.The element’s height cannot shrink below this value.If content inside is bigger, the element can grow taller.
+  ensures the section covers the full screen (like a hero/landing page), but still grows taller if there’s lots of content.*/
   background: rgb(241, 241, 241);
   display: flex;
   align-items: center;
-  gap: 7em;
+  gap: 7em;/*Defines spacing between flex items inside .home. 1em = current font-size of the element. So 7em is a large gap (7× font-size)
+  If your screen height is 900px, then 100vh = 900px.If screen height is 1080px, then 100vh = 1080px.*/
   padding: 30px 12% 0;
 }
 .home-content{
-  max-width: 800px;
+  max-width: 800px;/*The element can grow up to 800px wide, but not more. If the screen is bigger, the element stops at 800px.*/
+
 }
 .home-content h3{
   font-size: 42px;
@@ -110,7 +108,7 @@ orangered → shadow/glow color.
 
 .home-content h1{
   font-size: 62px;
-  line-height: 1.2;
+  line-height: 1.2;/*Unitless (recommended) → line-height: 1.2;Relative to font-size, scales automatically.Best for responsive design So line-height: 1.2; → means “make line spacing 1.2 times the text size”.It improves readability without looking too cramped or too spaced out.*/
 }
 .home-content p{
   font-size: 18px;
@@ -119,8 +117,8 @@ orangered → shadow/glow color.
 
 .btn-box{
   width: 345px;
-  display: flex;
-  gap: 2em;
+  display: flex;/*you can use flexbox properties to organize child elements easily.gap is one of them*/
+  gap: 2em;/*gap: 2em; → puts spacing between them, proportional to text size.em is used to keep spacing scalable & responsive instead of fixed.*/
 }
 
 .btn-1{
@@ -130,10 +128,10 @@ orangered → shadow/glow color.
   border: 2px solid transparent;
   border-radius: 8px;
   font-size: 18px;
-  letter-spacing: 1px;
+  letter-spacing: 1px;/*Controls how bold the text looks.Numeric scale: 100 = thin 400 = normal (regular) 600 = semi-bold 700 = bold 900 = extra-bold/black.So here → text becomes semi-bold.*/
   font-weight: 600;
   transition: 0.3s ease;
-  cursor: pointer;
+  cursor: pointer;/*Changes the cursor to a hand icon (like links) when hovering over the element. Commonly used for buttons, links, or clickable items to indicate interactivity.*/
 }
 
 .btn-1:hover{
@@ -141,6 +139,7 @@ orangered → shadow/glow color.
   color: black;
   border: 2px solid black;
 }
+
 .btn-2{
   padding: 15px 28px;
   background-color: orangered;
@@ -165,7 +164,7 @@ orangered → shadow/glow color.
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 15px;/*This is a pseudo-element selector used to style scrollbars.-webkit- means it works in WebKit-based browsers (Chrome, Edge, Safari, Opera).By default, scrollbars look different in each OS/browser. With this, you can customize their look. It targets the scrollbar area itself (the whole vertical bar on the right or horizontal bar at the bottom).*/
 }
 
 ::-webkit-scrollbar-thumb {
@@ -174,7 +173,7 @@ orangered → shadow/glow color.
 
 ::-webkit-scrollbar-track{
   background-color: rgba(0,0,0,0.6);
-  width: 50px;
+  width: 50px;/*::-webkit-scrollbar → overall scrollbar box (sets size).::-webkit-scrollbar-track → background “rail” area.::-webkit-scrollbar-thumb → draggable handle.*/
 }
 
 .about{
@@ -190,7 +189,7 @@ orangered → shadow/glow color.
   position: relative;
   width: 550px;
   box-shadow: 0 0 25px orangered,
-              0 0 50px orangered;
+              0 0 50px orangered;/*You separated them with a comma → means both shadows are applied at once.First: small glow (25px)Second: larger glow (50px)*/
   border-radius: 50%;
 }
 
@@ -212,12 +211,12 @@ orangered → shadow/glow color.
 
 .contact-form h2{
   text-align: center;
-  margin-top:  3em;
+  margin-top:  3em;/*Adds space above the element.3em → relative to the current element’s font size.Example: if font-size = 16px: So there will be 48px of space above the element.*/
   margin-bottom: 1em;
   font-size: 36px;
 }
 .contact-form form{
-  max-width: 50em;
+  max-width: 50em;/*The element’s width will never be wider than 50em.But on smaller screens, it can shrink.Often used for paragraphs, content blocks, containers → to stop text lines from becoming too long and hard to read.*/
   margin: 1rem auto;
   text-align: center;
   margin-bottom: 3em;
